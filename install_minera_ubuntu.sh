@@ -23,7 +23,7 @@ sudo service lighttpd force-reload
 
 echo -e "-----\nInstalling Minera in /var/www\n-----\n"
 cd /var/www
-sudo git clone https://github.com/michelem09/minera
+sudo git clone https://github.com/boxup/minera
 cd minera
 sudo ./install_minera.sh
 ./build_miner.sh all
