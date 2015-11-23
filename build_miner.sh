@@ -25,15 +25,15 @@ CPUMINER_MINERA_BINARY="minerd"
  
 BFGMINER_REPO="https://github.com/luke-jr/bfgminer.git"
 BFGMINER_PATH="$SOURCE_PATH/bfgminer"
-BFGMINER_CONFIG="--enable-scrypt --enable-broad-udevrules"
+BFGMINER_CONFIG="--enable-scrypt --enable-keccak --enable-broad-udevrules"
 BFGMINER_BINARY="bfgminer"
 BFGMINER_MINERA_BINARY="bfgminer"
  
-CGMINER_DMAXL_REPO="https://github.com/dmaxl/cgminer.git"
-CGMINER_DMAXL_PATH="$SOURCE_PATH/cgminer-dmaxl-zeus"
-CGMINER_DMAXL_CONFIG="--enable-scrypt --enable-gridseed --enable-zeus"
+CGMINER_DMAXL_REPO="https://github.com/dualminer/dualminer-cgminer.git"
+CGMINER_DMAXL_PATH="$SOURCE_PATH/dualminer-cgminer"
+CGMINER_DMAXL_CONFIG="--enable-dualminer --enable-scrypt --disable-opencl"
 CGMINER_DMAXL_BINARY="cgminer"
-CGMINER_DMAXL_MINERA_BINARY="cgminer-dmaxl-zeus"
+CGMINER_DMAXL_MINERA_BINARY="cgminer-dualminer"
  
 CGMINER_REPO="https://github.com/ckolivas/cgminer.git"
 CGMINER_PATH="$SOURCE_PATH/cgminer"
@@ -78,7 +78,7 @@ if [[ -d "$SOURCE_PATH" ]]; then
 		if [[ $OPT = "-l" ]]; then
 			LINK_ONLY=1
 		elif [[ $OPT = "all" ]]; then
-			ARGS="cpuminer bfgminer cgminer-dmaxl cgminer"
+			ARGS="cpuminer bfgminer cgminer-dualminer cgminer"
 		elif [[ $OPT = "cpuminer" ]]; then
 			BUILD_REPO=$CPUMINER_REPO
 			BUILD_PATH=$CPUMINER_PATH
@@ -93,7 +93,7 @@ if [[ -d "$SOURCE_PATH" ]]; then
 			BUILD_BINARY=$BFGMINER_BINARY
 			MINERA_BINARY=$BFGMINER_MINERA_BINARY
 			BUILD_OK=1
-		elif [[ $OPT = "cgminer-dmaxl" ]]; then
+		elif [[ $OPT = "cgminer-dualminer" ]]; then
 			BUILD_REPO=$CGMINER_DMAXL_REPO
 			BUILD_PATH=$CGMINER_DMAXL_PATH
 			BUILD_CONFIG=$CGMINER_DMAXL_CONFIG
@@ -125,7 +125,7 @@ if [[ -d "$SOURCE_PATH" ]]; then
 			echo "  cgminer           cgminer official"
 			echo "  cpuminer          cpuminer GC3355 fork"
 			echo "  bfgminer          bfgminer official"
-			echo "  cgminer-dmaxl     cgminer dmaxl fork (gridseed and zeus support)"
+			echo "  cgminer-dualminer cgminer dualminer fork"
 			echo "  all               build all the above"
 			echo ""
 	fi
