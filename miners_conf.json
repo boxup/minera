@@ -5,16 +5,10 @@
     "miner_options": "--gc3355-detect --freq=838"
 },
 {
-    "miner": "cpuminer",
-    "miner_name": "CPUMiner",
-    "miner_device": "Gridseed Blade",
-    "miner_options": "--gc3355-detect --freq=825 --gc3355-chips=40"
-},
-{
     "miner": "cgdmaxlzeus",
-    "miner_name": "CGminer Dmaxl",
-    "miner_device": "Gridseed Mini",
-    "miner_options": "--scrypt --scan-serial gridseed:auto --gridseed-options freq=838,chips=5"
+    "miner_name": "CGminer Dualminer",
+    "miner_device": "Dualminer",
+    "miner_options": "--scrypt --scan-serial --dualminer-pll 850"
 },
 {
     "miner": "cgdmaxlzeus",
@@ -91,8 +85,8 @@
 {
     "miner": "bfgminer",
     "miner_name": "BFGminer",
-    "miner_device": "Gridseed Mini",
-    "miner_options": "--scrypt -S gsd:all --set gsd:clock=838"
+    "miner_device": "Dualminer",
+    "miner_options": "--scrypt -S dualminer:all --set dualminer:clock=850"
 },
 {
     "miner": "bfgminer",
